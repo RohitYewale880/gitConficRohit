@@ -1,14 +1,16 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6">
-            <app-todo-form  (emitnewtodo)="onadd($event)"></app-todo-form>
-            <app-todo-form ></app-todo-form>
+            <app-todo-form
+             (emitnewtodo)="onadd($event)"
+            (emitupdate)="onupdates($event)"
+             [todoeditobj]="editTodoobject"></app-todo-form>
         </div>
         <div class="col-md-6">
-            <app-todo-list
+            <app-todo-list (emitedittodo)="onedittodo($event)"
             (emitRemoveTodo)="getRemoveTodo($event)"
             [todosarray]="array"
             ></app-todo-list>
-        </div>
+      </div>
     </div>
 </div>

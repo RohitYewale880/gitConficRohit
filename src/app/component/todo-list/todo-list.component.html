@@ -3,10 +3,12 @@
         <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todosarray; trackBy: trackByfun">
             <strong>{{todo.todoItem}}</strong>
             <div>
-                <button mat-mini-fab color="primary" class="mr-3"><mat-icon>edit</mat-icon></button>
+                <button mat-mini-fab color="primary" class="mr-3"
+                (click)="onedittodo(todo)"
+                ><mat-icon>edit</mat-icon></button>
                 <button 
-                (click)="OnRemove(todo.todoId)"
-                mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+                 (click)="OnRemove(todo.todoId)"
+                  mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
             </div>
         </li>
     </ul>
