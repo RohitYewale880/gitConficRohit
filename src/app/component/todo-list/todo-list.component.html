@@ -6,7 +6,9 @@
                 <button mat-mini-fab color="primary" class="mr-3"
                 (click)="onedittodo(todo)"
                 ><mat-icon>edit</mat-icon></button>
-                <button mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+                <button 
+                 (click)="OnRemove(todo.todoId)"
+                  mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
             </div>
         </li>
     </ul>

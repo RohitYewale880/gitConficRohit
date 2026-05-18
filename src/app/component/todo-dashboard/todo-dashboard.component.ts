@@ -10,20 +10,20 @@ import { Itodo } from 'src/app/modals/todo';
 export class TodoDashboardComponent implements OnInit {
   editTodoobject !:Itodo
   array!: Array<Itodo>
-
   constructor() { }
-
   ngOnInit(): void {
     this.array = todoArr
   }
-
   onedittodo(edittodo:Itodo){
 this.editTodoobject=edittodo
   }
-
   onupdates(updatetodo:Itodo){
     let getindex=this.array.findIndex(t => (t.todoId===updatetodo.todoId))
     this.array[getindex]=updatetodo
+  onadd(todo : Itodo){
+    this.array.push(todo)
+  getRemoveTodo(removeId:string){
+    let get_Index=this.array.findIndex(obj=>obj.todoId===removeId)
+    let removeTodo=this.array.splice(get_Index,1)
   }
-
 }
