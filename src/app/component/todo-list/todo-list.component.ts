@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Itodo } from 'src/app/modals/todo';
 
 @Component({
@@ -9,12 +9,18 @@ import { Itodo } from 'src/app/modals/todo';
 export class TodoListComponent implements OnInit {
 
   constructor() { }
+  @Output() emitedittodo :EventEmitter<Itodo>=new EventEmitter<Itodo>()
   @Input() todosarray! : Array<Itodo>
   ngOnInit(): void {
   }
 
   trackByfun(index : number, item:Itodo){
     return item.todoId
+  }
+
+  onedittodo(edittodo:Itodo){
+    this.emitedittodo.emit(edittodo)
+
   }
 
 }
