@@ -15,4 +15,8 @@ export class TodoDashboardComponent implements OnInit {
     this.array = todoArr
   }
 
+  onadd(todo : Itodo){
+    this.array.push(todo)
+  }
+
 }
