@@ -17,6 +17,11 @@ export class TodoDashboardComponent implements OnInit {
 
   onadd(todo : Itodo){
     this.array.push(todo)
+  getRemoveTodo(removeId:string){
+    let get_Index=this.array.findIndex(obj=>obj.todoId===removeId)
+    let removeTodo=this.array.splice(get_Index,1)
+    
+
   }
 
 }
