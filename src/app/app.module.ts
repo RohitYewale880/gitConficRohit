@@ -6,11 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { TodoDashboardComponent } from './component/todo-dashboard/todo-dashboard.component';
+import { TodoFormComponent } from './component/todo-form/todo-form.component';
+import { TodoListComponent } from './component/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ], 
+    AppComponent,
+    TodoDashboardComponent,
+    TodoFormComponent,
+    TodoListComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
