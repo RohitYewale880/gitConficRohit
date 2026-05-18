@@ -17,6 +17,7 @@ export class TodoListComponent implements OnInit {
   }
   onedittodo(edittodo:Itodo){
     this.emitedittodo.emit(edittodo)
+  }
   OnRemove(todoId:string){
        this.emitRemoveTodo.emit(todoId)
   }
