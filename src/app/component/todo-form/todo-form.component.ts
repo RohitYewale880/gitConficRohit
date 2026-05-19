@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { Itodo } from 'src/app/modals/todo';
+import { TodoServiceService } from 'src/app/service/todo-service.service';
 
 @Component({
   selector: 'app-todo-form',
@@ -12,7 +13,9 @@ export class TodoFormComponent implements OnInit, OnChanges {
 @Output() emitupdate:EventEmitter <Itodo>=new EventEmitter <Itodo> ()
 @ViewChild('TodoItem') TodoItem !:ElementRef
  @Output() emitnewtodo : EventEmitter<Itodo> = new EventEmitter<Itodo>()
-  constructor() { }
+  constructor(
+    private _snackbar:TodoServiceService
+  ) { }
   ngOnChanges(changes: SimpleChanges): void {
    if(changes['todoeditobj'].currentValue){
     this.isIneditmode=true
@@ -26,13 +29,11 @@ export class TodoFormComponent implements OnInit, OnChanges {
         todoItem : this.TodoItem.nativeElement.value,
         todoId : Date.now().toString()
       }
-
       this.emitnewtodo.emit(todo)
       this.TodoItem.nativeElement.value = ''
+      this._snackbar.openSnackBar(`The Todo ${todo.todoItem} is Added Successfully!!!`)
     }
-
   }
-
   onupdatebtn(){
     let new_updateobj:Itodo={
       todoItem:this.TodoItem.nativeElement.value,
@@ -40,8 +41,8 @@ export class TodoFormComponent implements OnInit, OnChanges {
     }
     this.isIneditmode=false
     this.emitupdate.emit(new_updateobj)
+    this._snackbar.openSnackBar(`The Todo ${new_updateobj.todoItem} is Updated Successfully!!!`)
     this.TodoItem.nativeElement.value=''
 
   }
-
 }
