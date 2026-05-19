@@ -40,6 +40,7 @@ export class TodoFormComponent implements OnInit, OnChanges {
     }
     this.isIneditmode=false
     this.emitupdate.emit(new_updateobj)
+    this.TodoItem.nativeElement.value=''
 
   }
 
