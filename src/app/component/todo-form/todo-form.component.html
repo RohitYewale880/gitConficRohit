@@ -3,7 +3,7 @@
         <label for="TodoItem">Todo Item</label>
         <input type="text" class="form-control" #TodoItem>
     </div>
-    <button (click)="onTodoAdd()" mat-raised-button color="primary" class="w-100" *ngIf="!isIneditmode">Add Todo</button>
-    <button mat-raised-button color="primary" class="w-100" *ngIf="isIneditmode" (click)="onupdatebtn()" >Add Update</button>
+    <button  (click)="onTodoAdd()" mat-raised-button color="primary" class="w-100" >Add Todo</button>
+    <button mat-raised-button color="primary" class="w-100"  (click)="onupdatebtn()" >Update Todo</button>
 
 </mat-card>
