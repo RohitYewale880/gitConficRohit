@@ -11,6 +11,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TodoDashboardComponent } from './component/todo-dashboard/todo-dashboard.component';
 import { TodoFormComponent } from './component/todo-form/todo-form.component';
 import { TodoListComponent } from './component/todo-list/todo-list.component';
+import { GetConfirmationComponent } from './component/get-confirmation/get-confirmation.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { TodoListComponent } from './component/todo-list/todo-list.component';
     AppComponent,
     TodoDashboardComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
+    GetConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { TodoListComponent } from './component/todo-list/todo-list.component';
     MatCardModule,
     MatIconModule,
     MatSnackBarModule
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

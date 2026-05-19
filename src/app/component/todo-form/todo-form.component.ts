@@ -42,5 +42,7 @@ export class TodoFormComponent implements OnInit, OnChanges {
     this.isIneditmode=false
     this.emitupdate.emit(new_updateobj)
     this._snackbar.openSnackBar(`The Todo ${new_updateobj.todoItem} is Updated Successfully!!!`)
+    this.TodoItem.nativeElement.value=''
+
   }
 }

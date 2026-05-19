@@ -1,5 +1,5 @@
 <mat-card>
-    <ul class="list-group">
+    <ul class="list-group" *ngIf="todosarray.length >0 else Notodosfound">
         <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todosarray; trackBy: trackByfun">
             <strong>{{todo.todoItem}}</strong>
             <div>
@@ -12,4 +12,8 @@
             </div>
         </li>
     </ul>
+
+    <ng-template #Notodosfound>
+        <p class="alert alert-danger">Plz enter Todo From data base</p>
+    </ng-template>
 </mat-card>
